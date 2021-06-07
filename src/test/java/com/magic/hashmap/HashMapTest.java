@@ -20,5 +20,22 @@ public class HashMapTest {
         Assert.assertEquals(2,frequency);
     }
 
-    
+    @Test
+    public void giveASentence_whenWordsAreAddedToList_ShouldReturnParanoid() {
+        String sentence="Paranoids are not paranoid because they are paranoid they keep putting themselves";
+        HashTable<String,Integer> hashTable=new HashTable<>();
+        String[] words=sentence.toLowerCase().split(" ");
+        for(String word:words){
+            Integer value = hashTable.get(word);
+            if(value==null)
+                value=1;
+            else
+                value=value+1;
+            hashTable.add(word,value);
+        }
+        int frequency=hashTable.get("paranoid");
+        hashTable.print();
+        Assert.assertEquals(2,frequency);
+    }
+
 }
