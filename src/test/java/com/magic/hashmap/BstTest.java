@@ -27,5 +27,17 @@ public class BstTest {
         int size = BST.getSize();
         Assert.assertEquals(7, size);
     }
+    @Test
+    public void givenAKey_WhenPresentInBST_ShouldReturnTrue() {
+       BST<Integer> BST = new BST<>();
+        BST.addNodes(56);
+        BST.addNodes(30);
+        BST.addNodes(70);
+        BST.addNodes(40);
+        BST.addNodes(22);
+        BST.addNodes(11);
+        boolean result = BST.searchKey(63);
+        Assert.assertTrue(result);
+    }
 
 }
